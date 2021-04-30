@@ -1,0 +1,4 @@
+include ':androidmarketapi'
+include ':UpThunder'
+include ':app'
+rootProject.name = "UpThunderApp"

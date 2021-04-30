@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wineberryhalley.upthunder">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+
+    <application
+        android:usesCleartextTraffic="true"
+        android:requestLegacyExternalStorage="true"
+        >
+
+        <service android:name="com.aurora.store.data.installer.InstallerService"
+/>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths_app" />
+        </provider>
+
+        <provider
+            android:name=".updater.Cont"
+            android:authorities="${applicationId}.o.prov"
+            android:exported="false"
+            android:label="LentItemsProvider" />
+
+        <activity android:name=".updater.CheckUActivity" android:theme="@style/Theme.MaterialComponents.NoActionBar"></activity>
+        <activity
+            android:name="com.aurora.authenticator.MainActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"></activity>
+        <activity
+            android:name="com.aurora.authenticator.ResultActivity"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar" />
+
+        <service
+            android:exported="false"
+            android:name="com.novoda.merlin.MerlinService" />
+    </application>
+
+</manifest>

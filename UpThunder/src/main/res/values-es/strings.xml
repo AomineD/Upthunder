@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="updater_title_n">¡%s ahora se puede actualizar automáticamente!</string>
+  <string name="updater_desc_n">Ahora esta aplicación se puede actualizar automáticamente y tener las últimas funciones. \n Esta función se puede desactivar</string>
+  <string name="updater_permis_wri">Permisos de escritura para descargar el apk automáticamente, mantenga la aplicación actualizada</string>
+  <string name="updater_permis_install">Solicita permisos de instalación, siempre te pedimos que instales cuando quieras</string>
+  <string name="request_pe_mission">Instalar</string>
+  <string name="no_permiss_ins">Permiso de instalación denegado</string>
+  <string name="chekinga">%s está buscando actualización...</string>
+  <string name="update_app">Actualizar</string>
+  <string name="update_titla">¡%s tiene una nueva actualización!</string>
+  <string name="has_upd">¡Nueva actualización disponible!</string>
+  <string name="new_udp">%s tiene una nueva actualización, ¡actualiza ahora!</string>
+  <string name="new_version">Nueva versión</string>
+  <string name="install_upd">Instalar actualización</string>
+  <string name="updating_app">%s se está actualizando…</string>
+  <string name="select_type">Seleccione el tipo de actualización</string>
+  <string name="ask_">Pregunta antes</string>
+  <string name="backgro">Actualización en segundo plano</string>
+  <string name="select_info">¿Qué quieres hacer cuando haya una actualización disponible?</string>
+  <string name="save_no">Guardar</string>
+  <string name="success_perm_de_2">Se han concedido todos los permisos, espera…</string>
+  <string name="downloading_">Descargando actualización…</string>
+  <string name="dow_d">%s actualización</string>
+  <string name="title_download_complete">Descarga completa</string>
+  <string name="desc_completed">Se completó la descarga de la actualización de %s, click para instalar</string>
+  <string name="downloading_2">%s actualizando</string>
+  <string name="error_">Ups, algo sale mal</string>
+  <string name="action_wait_moment">Espera un momento</string>
+  <string name="installing_we">Instalando la actualización, espere…</string>
+  <string name="can_go">Ahora puedes continuar con %s actualizado</string>
+  <string name="install_canceled">Instalación cancelada</string>
+  <string name="error_install">Vuelve a intentarlo o cierra esta ventana.</string>
+  <string name="default_update_text">En esta versión hicimos correcciones y mejoras en la aplicación, ¡Mantén la aplicación actualizada!</string>
+  <string name="desc_completed_2">%s nueva versión disponible ahora, ¡instálala ahora!</string>
+  <string name="deactive">Desactivar</string>
+  <string name="to_upd">Tu version %s, la nueva version es:</string>
+  <string name="news">Novedades</string>
+</resources>
