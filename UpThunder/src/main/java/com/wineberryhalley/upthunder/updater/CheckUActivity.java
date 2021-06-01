@@ -18,7 +18,6 @@ import com.aurora.store.data.event.InstallerEvent;
 import com.aurora.store.data.installer.AppInstaller;
 import com.aurora.store.data.installer.IInstaller;
 import com.aurora.store.data.model.Installer;
-import com.google.protobuf.Any;
 import com.wineberryhalley.bclassapp.BaseActivity;
 import com.wineberryhalley.upthunder.R;
 
