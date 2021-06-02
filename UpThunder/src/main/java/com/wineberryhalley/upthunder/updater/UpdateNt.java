@@ -95,7 +95,7 @@ if(!alreadyShow) {
     AuthData authData = StrDt.get();
 
     AppDetailsHelper appDetailsHelper = new AppDetailsHelper(authData);
-    // Log.e(TAG, "run: va1" );
+     Log.e(TAG, "run: va1" );
     App app = appDetailsHelper.getAppByPackageName(pack);
    //  Log.e(TAG, "run: va2" );
     updates = app.getChanges();
