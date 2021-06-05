@@ -82,6 +82,7 @@ got(context);
 
         if(StrDt.getType() == TypeUpdate.ASK ) {
             StrDt.addUpdateFrec();
+            Log.e("MAIN", "got: "+StrDt.canShowUpdate() );
             if(StrDt.canShowUpdate() || StrDt.existApk()) {
                 Log.e("MAIN", "got: bien" );
                 updateNt.showUpdater(new UpdateNt.OnUpdateListener() {

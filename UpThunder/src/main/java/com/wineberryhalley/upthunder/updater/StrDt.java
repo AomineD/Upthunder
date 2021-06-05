@@ -203,6 +203,7 @@ public class StrDt
   //          Log.e("MAIN", "canShowUpdate: reset" );
             tinyDB.putInt("update_frec", 0);
         }
+        Log.e("MAIN", "canShowUpdate: "+as );
         return as >= 3;
     }
 
