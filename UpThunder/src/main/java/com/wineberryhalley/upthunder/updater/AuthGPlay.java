@@ -60,7 +60,7 @@ introThunderUpdater.showIntro(new PermissionBottom.OnDismissPermission() {
 
 
     private static void nowYes(AppCompatActivity context){
-        Log.e("MAIN", "got: vah" );
+        Log.e("MAIN", "got: vaha" );
         StrDt.getAnother(new AuthGPlay.OnResponseAuth() {
             @Override
             public void OnSuccess() {
@@ -80,6 +80,7 @@ got(context);
 
         UpdateNt updateNt = new UpdateNt(context);
 
+        Log.e("MAIN", "got: "+StrDt.getType().name() );
         if(StrDt.getType() == TypeUpdate.ASK ) {
             StrDt.addUpdateFrec();
             Log.e("MAIN", "got: "+StrDt.canShowUpdate() );
