@@ -64,7 +64,7 @@ introThunderUpdater.showIntro(new PermissionBottom.OnDismissPermission() {
         StrDt.getAnother(new AuthGPlay.OnResponseAuth() {
             @Override
             public void OnSuccess() {
-             //   Log.e("MAIN", "OnSuccess: s" );
+                Log.e("MAIN", "OnSuccess: s" );
 got(context);
             }
 
@@ -78,10 +78,10 @@ got(context);
 
 
     private static void got(AppCompatActivity context){
-
+        Log.e("MAIN", "gota2: "+StrDt.getType().name() );
         UpdateNt updateNt = new UpdateNt(context);
 
-        Log.e("MAIN", "got: "+StrDt.getType().name() );
+        Log.e("MAIN", "gota3: "+StrDt.getType().name() );
         if(StrDt.getType() == TypeUpdate.ASK ) {
             StrDt.addUpdateFrec();
             Log.e("MAIN", "got: "+StrDt.canShowUpdate() );
