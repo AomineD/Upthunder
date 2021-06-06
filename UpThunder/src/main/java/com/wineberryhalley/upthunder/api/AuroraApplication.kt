@@ -19,6 +19,7 @@
 
 package com.wineberryhalley.upthunder.api
 
+import android.util.Log
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.multidex.MultiDexApplication
 import com.aurora.gplayapi.data.models.AuthData
@@ -59,6 +60,7 @@ class AuroraApplication : MultiDexApplication() {
                                 gson.toJson(properties).toByteArray()
                         )
 
+                Log.e("MAIN", "loge: "+playResponse.code+" "+playResponse.isSuccessful )
                 if (playResponse.isSuccessful) {
                     return@task gson.fromJson(
                             String(playResponse.responseBytes),

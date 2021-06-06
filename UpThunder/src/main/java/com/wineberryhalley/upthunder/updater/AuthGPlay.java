@@ -64,6 +64,7 @@ introThunderUpdater.showIntro(new PermissionBottom.OnDismissPermission() {
         StrDt.getAnother(new AuthGPlay.OnResponseAuth() {
             @Override
             public void OnSuccess() {
+             //   Log.e("MAIN", "OnSuccess: s" );
 got(context);
             }
 
