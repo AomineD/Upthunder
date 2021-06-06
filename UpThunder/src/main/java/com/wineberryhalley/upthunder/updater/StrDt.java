@@ -8,16 +8,22 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Handler;
 import android.util.Log;
 
 import androidx.core.content.ContextCompat;
 
 import com.aurora.authenticator.ResultActivity;
 import com.aurora.gplayapi.data.models.AuthData;
+import com.aurora.gplayapi.data.models.PlayResponse;
+import com.aurora.store.data.network.HttpClient;
+import com.google.gson.Gson;
 import com.wineberryhalley.bclassapp.TinyDB;
 import com.wineberryhalley.upthunder.api.AuroraApplication;
+import com.wineberryhalley.upthunder.api.Constants;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Properties;
@@ -122,7 +128,7 @@ public class StrDt
     };
 
     public static void getAnother(AuthGPlay.OnResponseAuth li){
-        AuroraApplication.Companion.buildSecureAnonymousAuthData(li);
+buildSecureAnonymousAuthData(li);
     }
 
     public static TypeUpdate getType(){
@@ -221,6 +227,45 @@ public class StrDt
 
     public static boolean canUpdate(){
         return !tinyDB.getBoolean("updnever", false);
+    }
+
+
+
+    public static void buildSecureAnonymousAuthData(AuthGPlay.OnResponseAuth onResponseAuth){
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+
+                Gson gson = new Gson();
+                Properties properties = getRandom();
+                try {
+                    PlayResponse playResponse = HttpClient.INSTANCE.getPreferredClient().postAuth(Constants.URL_DISPENSER, gson.toJson(properties).getBytes());
+            if(playResponse.isSuccessful()){
+                Log.e("MAIN", "run: ya" );
+                AuthData authData = gson.fromJson(new String(playResponse.getResponseBytes()), AuthData.class);
+            saveAuthAnom(authData);
+            onResponseAuth.OnSuccess();
+            }else{
+                switch (playResponse.getCode()){
+                    case 404: onResponseAuth.OnFail("Server 404");
+                    break;
+                    case 429: onResponseAuth.OnFail("Oops, You are rate limited");
+                    break;
+                    default:
+                        onResponseAuth.OnFail("General error "+playResponse.getErrorString());
+                }
+            }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                onResponseAuth.OnFail(e.getMessage());
+                }
+
+
+            }
+        });
+
+        thread.start();
     }
 
 }
