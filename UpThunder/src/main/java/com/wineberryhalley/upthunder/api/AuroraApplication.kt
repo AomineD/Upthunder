@@ -75,7 +75,9 @@ class AuroraApplication : MultiDexApplication() {
                 }
             } success {
                 //Set AuthData as anonymous
+                Log.e("MAIN", "buildSecureAnonymousAuthData: b" )
                 StrDt.saveAuthAnom(it)
+                Log.e("MAIN", "buildSecureAnonymousAuthData: a" )
 onResponseAuth.OnSuccess()
             } fail {
                 onResponseAuth.OnFail(it.message)

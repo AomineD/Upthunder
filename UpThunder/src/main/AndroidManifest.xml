@@ -25,7 +25,7 @@
 
         <provider
             android:name=".updater.Cont"
-            android:authorities="${applicationId}.o.prov"
+            android:authorities="${applicationId}.o.proveq"
             android:exported="false"
             android:label="LentItemsProvider" />
 
